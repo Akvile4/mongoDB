@@ -1,0 +1,25 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akvile4/mongoDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akvile4/mongoDB/issues"
+  },
+  "homepage": "https://github.com/Akvile4/mongoDB#readme",
+  "dependencies": {
+    "dotenv": "^15.0.0",
+    "mongodb": "^4.3.1",
+    "yargs": "^17.3.1"
+  }
+}
