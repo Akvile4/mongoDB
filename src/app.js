@@ -49,8 +49,14 @@ const app = async (yargsObj) => {
                 // logs 1 that means that first id was updated
             console.log(updatedMovie.modifiedCount);
         }
-        
-        
+        else if (yargsObj.delete) {
+            const database = client.db("Movies");
+            const collection = database.collection("Movie");
+                // we trying to find what we want to delete
+            const deleteThis = { title: "Mamma mia" };
+                // if the title was found it would be deleted
+            const deleted = await collection.deleteOne(deleteThis);
+        }
         else {
             console.log("That is not the right command");
         }
