@@ -14,6 +14,7 @@ const app = async (yargsObj) => {
             });
         } 
         else if (yargsObj.addMany) {
+            // we have to add into the array
             await addMovies(collection, [ {
                 title: yargsObj.title,
                 actor: yargsObj.actor,
@@ -31,6 +32,22 @@ const app = async (yargsObj) => {
             const foundThis = await collection.findOne(findThis);
                 // print it in the terminal
             console.log(foundThis);
+        }
+        else if (yargsObj.update) {
+            const database = client.db("Movies");
+            const collection = database.collection("Movie");
+                // we using $set to set the new values of our keys
+                // it will update the first document 
+            const updateMovie = {
+                $set: {
+                    title: "Mamma mia",
+                    actor: "Meryl Streep",
+                }
+            }
+                // specify the first document {} to update the first document returned in the collection
+            const updatedMovie = await collection.updateOne({}, updateMovie, {})
+                // logs 1 that means that first id was updated
+            console.log(updatedMovie.modifiedCount);
         }
         
         
